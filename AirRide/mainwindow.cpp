@@ -10,7 +10,19 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->front_left->setText("1");
     ui->back_right->setText("4");
     ui->front_right->setText("2");
-    ui->tank->setText("shits hp");
+    ui->tank->setText("tank");
+    ui->Preset1Mod->setRange(40,100);
+    ui->Preset1Mod_2->setRange(40,100);
+    ui->Preset2Mod->setRange(40,100);
+    ui->Preset2Mod_2->setRange(40,100);
+    ui->PresetMod3->setRange(40,100);
+    ui->PresetMod3_2->setRange(40,100);
+    ui->Preset1Mod->setValue(40);
+    ui->Preset1Mod_2->setValue(40);
+    ui->Preset2Mod->setValue(40);
+    ui->Preset2Mod_2->setValue(40);
+    ui->PresetMod3->setValue(40);
+    ui->PresetMod3_2->setValue(40);
 
     QObject::connect(ui->Preset1Mod,SIGNAL(valueChanged(int)),this,SLOT(updatePreset1(int)));
     QObject::connect(ui->Preset2Mod,SIGNAL(valueChanged(int)),this,SLOT(updatePreset2(int)));
@@ -22,9 +34,20 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(timer,SIGNAL(timeout()),this,SLOT(timerUpdate()));
     timer->start(100);
 
+    connect(ui->FL_UP,SIGNAL(released()),this,SLOT(FLUP()));
+    connect(ui->FL_DOWN,SIGNAL(released()),this,SLOT(FLDOWN()));
+    connect(ui->FR_UP,SIGNAL(released()),this,SLOT(FRUP()));
+    connect(ui->FR_DOWN,SIGNAL(released()),this,SLOT(FRDOWN()));
+    connect(ui->RL_UP,SIGNAL(released()),this,SLOT(RLUP()));
+    connect(ui->RL_DOWN,SIGNAL(released()),this,SLOT(RLDOWN()));
+    connect(ui->RR_UP,SIGNAL(released()),this,SLOT(RRUP()));
+    connect(ui->RR_DOWN,SIGNAL(released()),this,SLOT(RRDOWN()));
+    connect(ui->ON,SIGNAL(released()),this,SLOT(manualOn()));
+
     connect(ui->preset1,SIGNAL(released()),this,SLOT(button1()));
     connect(ui->preset2,SIGNAL(released()),this,SLOT(button2()));
     connect(ui->preset3,SIGNAL(released()),this,SLOT(button3()));
+    button1();
 }
 
 MainWindow::~MainWindow()
@@ -57,16 +80,73 @@ void MainWindow::updatePreset3b(int newValue){
     preset3back=newValue;
 }
 
-void MainWindow::button1(){         //send commands to arduino for preset 1
+void MainWindow::FLUP(){
+    FL++;
+    ui->FL_MAN->setText(QString::number(FL));
+}
 
+void MainWindow::FLDOWN(){
+    FL--;
+    ui->FL_MAN->setText(QString::number(FL));
+}
+
+void MainWindow::FRUP(){
+    FR++;
+    ui->FR_MAN->setText(QString::number(FR));
+}
+
+void MainWindow::FRDOWN(){
+    FR--;
+    ui->FR_MAN->setText(QString::number(FR));
+}
+
+void MainWindow::RLUP(){
+    RL++;
+    ui->RL_MAN->setText(QString::number(RL));
+}
+
+void MainWindow::RLDOWN(){
+    RL--;
+    ui->RL_MAN->setText(QString::number(RL));
+}
+
+void MainWindow::RRUP(){
+    RR++;
+    ui->RR_MAN->setText(QString::number(RR));
+}
+
+void MainWindow::RRDOWN(){
+    RR--;
+    ui->RR_MAN->setText(QString::number(RR));
+}
+
+void MainWindow::manualOn(){
+    if(manOn){
+        manOn=false;
+        ui->ON->setStyleSheet(normalBut);
+    }
+    if(!manOn){
+        manOn-true;
+        ui->ON->setStyleSheet(SelectedBut);
+    }
+}
+
+void MainWindow::button1(){         //send commands to arduino for preset 1
+    ui->preset1->setStyleSheet(SelectedBut);
+    ui->preset2->setStyleSheet(normalBut);
+    ui->preset3->setStyleSheet(normalBut);
 }
 
 void MainWindow::button2(){         //send commands to arduino for preset 2
-
+    ui->preset1->setStyleSheet(normalBut);
+    ui->preset2->setStyleSheet(SelectedBut);
+    ui->preset3->setStyleSheet(normalBut);
 }
 
 void MainWindow::button3(){         //send commands to arduino for preset 3
-
+    ui->preset1->setStyleSheet(normalBut);
+    ui->preset2->setStyleSheet(normalBut);
+    ui->preset3->setStyleSheet(SelectedBut);
 }
 
 void MainWindow::timerUpdate(){                 //this needs to update all pressure values
