@@ -31,17 +31,29 @@ background-color:black;
     <property name="styleSheet">
      <string notr="true">QWidget{
 background-color:black;
+border-color:black;
+}
+QTabWidget{
+background-color:black;
+}
+QTabBar::tab{
+color:white;
+background-color:black;
+}
+QTabBar{
+background-color:black;
+color:black;
 }</string>
     </property>
     <property name="tabPosition">
      <enum>QTabWidget::West</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
-      <string>Tab 1</string>
+      <string>General</string>
      </attribute>
      <widget class="QLabel" name="label">
       <property name="geometry">
@@ -64,8 +76,8 @@ color:white;
      <widget class="QLabel" name="front_left">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>40</y>
+        <x>20</x>
+        <y>30</y>
         <width>68</width>
         <height>21</height>
        </rect>
@@ -85,8 +97,8 @@ color:white;
      <widget class="QLabel" name="back_left">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>150</y>
+        <x>20</x>
+        <y>140</y>
         <width>68</width>
         <height>21</height>
        </rect>
@@ -106,8 +118,8 @@ color:white;
      <widget class="QLabel" name="front_right">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>40</y>
+        <x>150</x>
+        <y>30</y>
         <width>68</width>
         <height>21</height>
        </rect>
@@ -127,8 +139,8 @@ color:white;
      <widget class="QLabel" name="back_right">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>150</y>
+        <x>150</x>
+        <y>140</y>
         <width>68</width>
         <height>21</height>
        </rect>
@@ -148,7 +160,7 @@ color:white;
      <widget class="QLabel" name="tank">
       <property name="geometry">
        <rect>
-        <x>70</x>
+        <x>80</x>
         <y>100</y>
         <width>68</width>
         <height>21</height>
@@ -169,8 +181,8 @@ color:white;
      <widget class="QPushButton" name="preset1">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>10</y>
+        <x>280</x>
+        <y>20</y>
         <width>131</width>
         <height>61</height>
        </rect>
@@ -178,6 +190,7 @@ color:white;
       <property name="styleSheet">
        <string notr="true">QPushButton{
 background-color: grey;
+color:white;
 }
 </string>
       </property>
@@ -188,8 +201,8 @@ background-color: grey;
      <widget class="QPushButton" name="preset2">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>80</y>
+        <x>280</x>
+        <y>100</y>
         <width>131</width>
         <height>61</height>
        </rect>
@@ -197,7 +210,9 @@ background-color: grey;
       <property name="styleSheet">
        <string notr="true">QPushButton{
 background-color: grey;
+color:white;
 }
+
 </string>
       </property>
       <property name="text">
@@ -207,8 +222,8 @@ background-color: grey;
      <widget class="QPushButton" name="preset3">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>160</y>
+        <x>280</x>
+        <y>180</y>
         <width>131</width>
         <height>61</height>
        </rect>
@@ -216,7 +231,10 @@ background-color: grey;
       <property name="styleSheet">
        <string notr="true">QPushButton{
 background-color: grey;
-}</string>
+color:white;
+}
+
+</string>
       </property>
       <property name="text">
        <string>Preset 3</string>
@@ -243,7 +261,7 @@ background-color: red;
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
-      <string>Tab 2</string>
+      <string>Preset Adjust</string>
      </attribute>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
