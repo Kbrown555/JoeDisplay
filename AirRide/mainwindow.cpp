@@ -23,6 +23,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->Preset2Mod_2->setValue(40);
     ui->PresetMod3->setValue(40);
     ui->PresetMod3_2->setValue(40);
+    ui->FL_MAN->setText("40");
+    ui->FR_MAN->setText("40");
+    ui->RL_MAN->setText("40");
+    ui->RR_MAN->setText("40");
 
     QObject::connect(ui->Preset1Mod,SIGNAL(valueChanged(int)),this,SLOT(updatePreset1(int)));
     QObject::connect(ui->Preset2Mod,SIGNAL(valueChanged(int)),this,SLOT(updatePreset2(int)));
@@ -48,6 +52,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->preset2,SIGNAL(released()),this,SLOT(button2()));
     connect(ui->preset3,SIGNAL(released()),this,SLOT(button3()));
     button1();
+    manOn=false;
 }
 
 MainWindow::~MainWindow()
@@ -125,8 +130,8 @@ void MainWindow::manualOn(){
         manOn=false;
         ui->ON->setStyleSheet(normalBut);
     }
-    if(!manOn){
-        manOn-true;
+    else{
+        manOn=true;
         ui->ON->setStyleSheet(SelectedBut);
     }
 }

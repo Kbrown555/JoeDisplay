@@ -48,7 +48,7 @@ private:
     QTimer *timer;
     const QString normalBut="QPushButton{background-color: white;color:black;}";
     const QString SelectedBut="QPushButton{background-color: green;color:white;}";
-    bool manOn=false;
+    bool manOn;
 };
 
 #endif // MAINWINDOW_H
