@@ -6,6 +6,9 @@
 #include <string>
 #include <QTimer>
 #include <sstream>
+#include "Serial.h"
+#include <fstream>
+
 
 namespace Ui {
 class MainWindow;
@@ -43,12 +46,18 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
-    float preset1front=40,preset1back=40,preset2front=40,preset2back=40,preset3front=40,preset3back=40;
+    float preset1front,preset1back,preset2front,preset2back,preset3front,preset3back;
     float FL=40,FR=40,RL=40,RR=40;
     QTimer *timer;
-    const QString normalBut="QPushButton{background-color: white;color:black;}";
-    const QString SelectedBut="QPushButton{background-color: green;color:white;}";
+    QString normalBut="QPushButton{background-color: white;color:black;border-style: outset;border-width: 2px;border-radius: 10px;border-color: grey;padding: 6px;} QPushButton:pressed {background-color:green;color:white;border-style: inset;}";
+    QString SelectedBut="QPushButton{background-color: green;color:white;border-style: outset;border-width: 2px;border-radius: 10px;border-color: grey;padding: 6px;}";
     bool manOn;
+    Serial *USB;
+    char * inbound;
+    int startBuf;
+
+
+    void writeFile();
 };
 
 #endif // MAINWINDOW_H

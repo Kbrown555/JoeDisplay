@@ -22,7 +22,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+      19,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -40,6 +40,15 @@ static const uint qt_meta_data_MainWindow[] = {
      143,   30,   30,   30, 0x0a,
      153,   30,   30,   30, 0x0a,
      163,   30,   30,   30, 0x0a,
+     173,   30,   30,   30, 0x0a,
+     180,   30,   30,   30, 0x0a,
+     189,   30,   30,   30, 0x0a,
+     196,   30,   30,   30, 0x0a,
+     205,   30,   30,   30, 0x0a,
+     212,   30,   30,   30, 0x0a,
+     221,   30,   30,   30, 0x0a,
+     228,   30,   30,   30, 0x0a,
+     237,   30,   30,   30, 0x0a,
 
        0        // eod
 };
@@ -49,7 +58,9 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "updatePreset2(int)\0updatePreset3(int)\0"
     "updatePreset1b(int)\0updatePreset2b(int)\0"
     "updatePreset3b(int)\0timerUpdate()\0"
-    "button1()\0button2()\0button3()\0"
+    "button1()\0button2()\0button3()\0FLUP()\0"
+    "FLDOWN()\0FRUP()\0FRDOWN()\0RLUP()\0"
+    "RLDOWN()\0RRUP()\0RRDOWN()\0manualOn()\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -68,6 +79,15 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 7: _t->button1(); break;
         case 8: _t->button2(); break;
         case 9: _t->button3(); break;
+        case 10: _t->FLUP(); break;
+        case 11: _t->FLDOWN(); break;
+        case 12: _t->FRUP(); break;
+        case 13: _t->FRDOWN(); break;
+        case 14: _t->RLUP(); break;
+        case 15: _t->RLDOWN(); break;
+        case 16: _t->RRUP(); break;
+        case 17: _t->RRDOWN(); break;
+        case 18: _t->manualOn(); break;
         default: ;
         }
     }
@@ -105,9 +125,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 19)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 19;
     }
     return _id;
 }
