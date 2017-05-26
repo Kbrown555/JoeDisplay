@@ -62,8 +62,8 @@ void Serial::myRead(char *returnBuf, int &returnLength, char endChar){
     int n=0,spot=0;
     char buf;
 
-    read(USB,&buf,1);
-    while(buf!='S')
+    n=read(USB,&buf,1);
+    while(buf!='S' && n>0)
         read(USB,&buf,1);
     do {
         n = read( USB, &buf, 1 );
@@ -75,6 +75,8 @@ void Serial::myRead(char *returnBuf, int &returnLength, char endChar){
 
     memcpy(returnBuf,response,spot+1);
     returnLength=spot;
+
+    tcflush(USB, TCIOFLUSH);
 }
 
 

@@ -78,10 +78,11 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->preset1,SIGNAL(released()),this,SLOT(button1()));
     connect(ui->preset2,SIGNAL(released()),this,SLOT(button2()));
     connect(ui->preset3,SIGNAL(released()),this,SLOT(button3()));
-    //button1();
+    connect(ui->AirOut, SIGNAL(released()),this,SLOT(airOut()));
     manOn=false;
     USB= new Serial();
 
+    button1();
 }
 
 MainWindow::~MainWindow()
@@ -89,6 +90,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::airOut(){
+    char * toSend= new char[64];
+    sprintf(toSend,"AO");
+    USB->myWrite(toSend,strlen(toSend));
+}
 
 void MainWindow::updatePreset1(int newValue){
     preset1front=newValue;

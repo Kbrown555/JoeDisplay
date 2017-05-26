@@ -33,6 +33,8 @@ public slots:
     void button2();
     void button3();
 
+    void airOut();
+
     void FLUP();
     void FLDOWN();
     void FRUP();
