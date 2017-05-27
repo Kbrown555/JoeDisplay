@@ -63,7 +63,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->PresetMod3_2,SIGNAL(valueChanged(int)),this,SLOT(updatePreset3b(int)));
     timer= new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(timerUpdate()));
-    timer->setInterval(200);
+    timer->setInterval(1000);
     timer->start();
     connect(ui->FL_UP,SIGNAL(released()),this,SLOT(FLUP()));
     connect(ui->FL_DOWN,SIGNAL(released()),this,SLOT(FLDOWN()));

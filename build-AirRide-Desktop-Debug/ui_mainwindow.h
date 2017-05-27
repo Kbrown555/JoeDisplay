@@ -95,6 +95,7 @@ public:
 "QTabBar::tab{\n"
 "color:white;\n"
 "background-color:black;\n"
+"height: 105px;\n"
 "}\n"
 "QTabBar{\n"
 "background-color:black;\n"
@@ -105,48 +106,48 @@ public:
         tab->setObjectName(QString::fromUtf8("tab"));
         label = new QLabel(tab);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(70, 0, 131, 21));
+        label->setGeometry(QRect(70, 10, 131, 21));
         label->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}"));
         front_left = new QLabel(tab);
         front_left->setObjectName(QString::fromUtf8("front_left"));
-        front_left->setGeometry(QRect(20, 30, 68, 21));
+        front_left->setGeometry(QRect(40, 40, 68, 21));
         front_left->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}"));
         front_left->setAlignment(Qt::AlignCenter);
         back_left = new QLabel(tab);
         back_left->setObjectName(QString::fromUtf8("back_left"));
-        back_left->setGeometry(QRect(20, 140, 68, 21));
+        back_left->setGeometry(QRect(40, 170, 68, 21));
         back_left->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}"));
         back_left->setAlignment(Qt::AlignCenter);
         front_right = new QLabel(tab);
         front_right->setObjectName(QString::fromUtf8("front_right"));
-        front_right->setGeometry(QRect(150, 30, 68, 21));
+        front_right->setGeometry(QRect(170, 40, 68, 21));
         front_right->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}"));
         front_right->setAlignment(Qt::AlignCenter);
         back_right = new QLabel(tab);
         back_right->setObjectName(QString::fromUtf8("back_right"));
-        back_right->setGeometry(QRect(150, 140, 68, 21));
+        back_right->setGeometry(QRect(170, 170, 68, 21));
         back_right->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}"));
         back_right->setAlignment(Qt::AlignCenter);
         tank = new QLabel(tab);
         tank->setObjectName(QString::fromUtf8("tank"));
-        tank->setGeometry(QRect(80, 100, 68, 21));
+        tank->setGeometry(QRect(100, 130, 68, 21));
         tank->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}"));
         tank->setAlignment(Qt::AlignCenter);
         preset1 = new QPushButton(tab);
         preset1->setObjectName(QString::fromUtf8("preset1"));
-        preset1->setGeometry(QRect(280, 20, 131, 61));
+        preset1->setGeometry(QRect(290, 30, 131, 61));
         preset1->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "background-color: grey;\n"
 "color:white;\n"
@@ -154,7 +155,7 @@ public:
 ""));
         preset2 = new QPushButton(tab);
         preset2->setObjectName(QString::fromUtf8("preset2"));
-        preset2->setGeometry(QRect(280, 100, 131, 61));
+        preset2->setGeometry(QRect(290, 120, 131, 61));
         preset2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "background-color: grey;\n"
 "color:white;\n"
@@ -163,7 +164,7 @@ public:
 ""));
         preset3 = new QPushButton(tab);
         preset3->setObjectName(QString::fromUtf8("preset3"));
-        preset3->setGeometry(QRect(280, 180, 131, 61));
+        preset3->setGeometry(QRect(290, 210, 131, 61));
         preset3->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "background-color: grey;\n"
 "color:white;\n"
@@ -172,7 +173,7 @@ public:
 ""));
         AirOut = new QPushButton(tab);
         AirOut->setObjectName(QString::fromUtf8("AirOut"));
-        AirOut->setGeometry(QRect(10, 170, 241, 71));
+        AirOut->setGeometry(QRect(20, 210, 241, 71));
         AirOut->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: red;\n"
 "    border-style: outset;\n"
@@ -193,19 +194,19 @@ public:
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         label_2 = new QLabel(tab_2);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(10, 0, 131, 21));
+        label_2->setGeometry(QRect(10, 10, 131, 21));
         label_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}"));
         label_3 = new QLabel(tab_2);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(20, 90, 131, 21));
+        label_3->setGeometry(QRect(10, 100, 131, 21));
         label_3->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}"));
         label_4 = new QLabel(tab_2);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(20, 170, 131, 21));
+        label_4->setGeometry(QRect(10, 200, 131, 21));
         label_4->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}"));
@@ -215,23 +216,23 @@ public:
         Preset1Mod->setOrientation(Qt::Horizontal);
         Preset2Mod = new QSlider(tab_2);
         Preset2Mod->setObjectName(QString::fromUtf8("Preset2Mod"));
-        Preset2Mod->setGeometry(QRect(40, 110, 371, 26));
+        Preset2Mod->setGeometry(QRect(40, 120, 371, 26));
         Preset2Mod->setOrientation(Qt::Horizontal);
         PresetMod3 = new QSlider(tab_2);
         PresetMod3->setObjectName(QString::fromUtf8("PresetMod3"));
-        PresetMod3->setGeometry(QRect(40, 200, 371, 26));
+        PresetMod3->setGeometry(QRect(40, 220, 371, 26));
         PresetMod3->setOrientation(Qt::Horizontal);
         Preset1Mod_2 = new QSlider(tab_2);
         Preset1Mod_2->setObjectName(QString::fromUtf8("Preset1Mod_2"));
-        Preset1Mod_2->setGeometry(QRect(40, 60, 371, 26));
+        Preset1Mod_2->setGeometry(QRect(40, 70, 371, 26));
         Preset1Mod_2->setOrientation(Qt::Horizontal);
         Preset2Mod_2 = new QSlider(tab_2);
         Preset2Mod_2->setObjectName(QString::fromUtf8("Preset2Mod_2"));
-        Preset2Mod_2->setGeometry(QRect(40, 140, 371, 26));
+        Preset2Mod_2->setGeometry(QRect(40, 160, 371, 26));
         Preset2Mod_2->setOrientation(Qt::Horizontal);
         PresetMod3_2 = new QSlider(tab_2);
         PresetMod3_2->setObjectName(QString::fromUtf8("PresetMod3_2"));
-        PresetMod3_2->setGeometry(QRect(40, 230, 371, 26));
+        PresetMod3_2->setGeometry(QRect(40, 260, 371, 26));
         PresetMod3_2->setOrientation(Qt::Horizontal);
         P1Flabel = new QLabel(tab_2);
         P1Flabel->setObjectName(QString::fromUtf8("P1Flabel"));
@@ -241,31 +242,31 @@ public:
 "}"));
         P1Blabel = new QLabel(tab_2);
         P1Blabel->setObjectName(QString::fromUtf8("P1Blabel"));
-        P1Blabel->setGeometry(QRect(10, 60, 21, 21));
+        P1Blabel->setGeometry(QRect(10, 70, 21, 21));
         P1Blabel->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}"));
         P2Flabel = new QLabel(tab_2);
         P2Flabel->setObjectName(QString::fromUtf8("P2Flabel"));
-        P2Flabel->setGeometry(QRect(10, 110, 21, 21));
+        P2Flabel->setGeometry(QRect(10, 120, 21, 21));
         P2Flabel->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}"));
         P2Blabel = new QLabel(tab_2);
         P2Blabel->setObjectName(QString::fromUtf8("P2Blabel"));
-        P2Blabel->setGeometry(QRect(10, 140, 21, 21));
+        P2Blabel->setGeometry(QRect(10, 160, 21, 21));
         P2Blabel->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}"));
         P3Flabel = new QLabel(tab_2);
         P3Flabel->setObjectName(QString::fromUtf8("P3Flabel"));
-        P3Flabel->setGeometry(QRect(10, 200, 21, 21));
+        P3Flabel->setGeometry(QRect(10, 220, 21, 21));
         P3Flabel->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}"));
         P3Blabel = new QLabel(tab_2);
         P3Blabel->setObjectName(QString::fromUtf8("P3Blabel"));
-        P3Blabel->setGeometry(QRect(10, 230, 21, 21));
+        P3Blabel->setGeometry(QRect(10, 260, 21, 21));
         P3Blabel->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}"));
@@ -306,7 +307,7 @@ public:
 ""));
         RL_UP = new QPushButton(tab_3);
         RL_UP->setObjectName(QString::fromUtf8("RL_UP"));
-        RL_UP->setGeometry(QRect(30, 110, 101, 31));
+        RL_UP->setGeometry(QRect(30, 130, 101, 31));
         RL_UP->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "background-color: white;\n"
 "color:black;\n"
@@ -315,7 +316,7 @@ public:
 ""));
         RL_DOWN = new QPushButton(tab_3);
         RL_DOWN->setObjectName(QString::fromUtf8("RL_DOWN"));
-        RL_DOWN->setGeometry(QRect(30, 140, 101, 31));
+        RL_DOWN->setGeometry(QRect(30, 160, 101, 31));
         RL_DOWN->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "background-color: white;\n"
 "color:black;\n"
@@ -323,7 +324,7 @@ public:
 ""));
         RR_UP = new QPushButton(tab_3);
         RR_UP->setObjectName(QString::fromUtf8("RR_UP"));
-        RR_UP->setGeometry(QRect(240, 110, 101, 31));
+        RR_UP->setGeometry(QRect(240, 130, 101, 31));
         RR_UP->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "background-color: white;\n"
 "color:black;\n"
@@ -331,7 +332,7 @@ public:
 ""));
         RR_DOWN = new QPushButton(tab_3);
         RR_DOWN->setObjectName(QString::fromUtf8("RR_DOWN"));
-        RR_DOWN->setGeometry(QRect(240, 140, 101, 31));
+        RR_DOWN->setGeometry(QRect(240, 160, 101, 31));
         RR_DOWN->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "background-color: white;\n"
 "color:black;\n"
@@ -352,20 +353,20 @@ public:
 ""));
         RR_MAN = new QLabel(tab_3);
         RR_MAN->setObjectName(QString::fromUtf8("RR_MAN"));
-        RR_MAN->setGeometry(QRect(350, 110, 68, 61));
+        RR_MAN->setGeometry(QRect(350, 130, 68, 61));
         RR_MAN->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}\n"
 ""));
         RL_MAN = new QLabel(tab_3);
         RL_MAN->setObjectName(QString::fromUtf8("RL_MAN"));
-        RL_MAN->setGeometry(QRect(140, 110, 68, 61));
+        RL_MAN->setGeometry(QRect(140, 130, 68, 61));
         RL_MAN->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color:white;\n"
 "}"));
         ON = new QPushButton(tab_3);
         ON->setObjectName(QString::fromUtf8("ON"));
-        ON->setGeometry(QRect(60, 190, 301, 51));
+        ON->setGeometry(QRect(60, 220, 301, 51));
         ON->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "background-color: white;\n"
 "color:black;\n"
