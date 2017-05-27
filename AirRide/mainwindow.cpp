@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     inbound= new char[1024];
-    std::ifstream infile("/home/pi/Documents/AirRide_Proj/preset.txt");
+    std::ifstream infile("/home/pi/Documents/screen/JoeDisplay/preset.txt");
     float a,b,c,d,e,f;
     if(infile.is_open()&& infile>>a>>b>>c>>d>>e>>f){
         preset1front=a;
@@ -267,7 +267,7 @@ void MainWindow::timerUpdate(){                 //this needs to update all press
     int end=str.find("}");
     if(start>=0 && end>=0){
         str=str.substr(start,end-start+1);
-        ui->label_5->setText(QString::fromStdString(str));
+       // ui->label_5->setText(QString::fromStdString(str));
         int temp= str.find("FL");
         std::string frontLeft= str.substr(temp+2,2);
         temp= str.find("FR");
@@ -291,7 +291,7 @@ void MainWindow::timerUpdate(){                 //this needs to update all press
 
 void MainWindow::writeFile(){
     std::ofstream outfile;
-    outfile.open("/home/pi/Documents/AirRide_Proj/preset.txt");
+    outfile.open("/home/pi/Documents/screen/JoeDisplay/preset.txt");
     if(outfile.is_open()){
         outfile<<preset1front<<"\n"<<preset1back<<"\n"<<preset2front<<"\n"<<preset2back<<"\n"<<preset3front<<"\n"<<preset3back<<"\n";
 
